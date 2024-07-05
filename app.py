@@ -66,7 +66,7 @@ def predict(request: PredictRequest):
         raise HTTPException(status_code=400, detail=str(e))
 
 # Define the training endpoint
-@app.post('/train')
+@app.post('/train_test')
 async def train(file: UploadFile = File(...), feature_cols: str = Form(...)):
     try:
         # Read the uploaded file
